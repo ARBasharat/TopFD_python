@@ -88,9 +88,9 @@ if __name__ == "__main__":
   env_coll_list = []
   features = []
   seed_env_idx = 0
-  for seed_env_idx in range(2129, seed_num):
-    # if seed_env_idx%1000 == 0:
-    print("Processing", seed_env_idx, "of", seed_num, "and env collection num:", env_coll_num)
+  for seed_env_idx in range(0, seed_num):
+    if seed_env_idx%1000 == 0:
+      print("Processing", seed_env_idx, "of", seed_num, "and env collection num:", env_coll_num)
     env = seed_envs[seed_env_idx]      
     valid = evaluate_envelope.preprocess_env(peak_matrix, env, mass_tole, corr_tole, snr)
     if (not valid): continue
